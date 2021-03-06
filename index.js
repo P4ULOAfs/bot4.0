@@ -8,21 +8,15 @@ const {
 const { color, bgcolor } = require('./lib/color')
 const { help } = require('/dark/help')
 const {help1} = require('./src/help1')
-const { modapk } = require('/src/modapk')
 const { pack } = require('./src/pack')
 const { outros } = require('./src/outros')
-const { vipmenu } = require('./src/vipmenu')
 const { animemenu } = require('./dark/animemenu')
 const { destrava } = require('./src/destrava')
 const { menu2 } = require('./src/menu2')
 const { destrava2 } = require('./src/destrava')
 const { musicas } = require('./dark/musicas')
 const { puxar_numero } = require('./database/json/number')
-const { gbin } = require('./src/gbin')
-const { gpessoa } = require('./src/gpessoa')
 const { tool } = require('./dark/tool')
-const { chentai } = require('./src/chentai')
-const { gcpf } = require('./src/gcpf')
 const { addsay } = require('./src/addsay')
 const { listsay } = require('./src/listsay')
 const { addfoto } = require('./src/addfoto')
@@ -46,12 +40,9 @@ const { exec } = require('child_process')
 const kagApi = require('@kagchi/kag-api')
 const fetch = require('node-fetch')
 const tiktod = require('tiktok-scraper')
-const { cekvip } = require('./src/cekvip')
 const { darkApi } = JSON.parse(fs.readFileSync('./database/json/apikey.json'))
 const { VthearApi } = JSON.parse(fs.readFileSync('./database/json/apikey.json'))
-const { daftarvip } = require('./src/daftarvip')
 const { iklan } = require('./src/iklan')
-const { daftatvip } = require('./src/daftarvip')
 const ffmpeg = require('fluent-ffmpeg')
 const { removeBackgroundFromImageFile } = require('remove.bg')
 const imgbb = require('imgbb-uploader')
@@ -64,14 +55,14 @@ const { limit } = require('./database/menu/limit*/
 const apivhtear = 'apivhtear';
 const apibarbar = 'apibarbar';
 const darkkey = 'apidark';
-const BotName = 'darkbot'; 
+const BotName = 'Paulo'; 
 const instagram = 'http://www.instagram.com/'; 
 const aktif = '08:00 - 22:00';
 const vcard = 'BEGIN:VCARD\n'
             + 'VERSION:3.0\n' 
             + 'FN:Dark\n' // Nama kamu
             + 'ORG:Lexa;\n' // Nama bot
-            + 'TEL;type=CELL;type=VOICE;waid=5522996215481:+55 2299621-5481\n' //Nomor whatsapp kamu
+            + 'TEL;type=CELL;type=VOICE;waid=558498198074:+55 849819-8074\n' //Nomor whatsapp kamu
             + 'END:VCARD'
 const ngonsol = JSON.parse(fs.readFileSync('./settings/Miku.json'))
 const {
@@ -90,7 +81,7 @@ const {
 prefixbotbot = '.','!','#'
 blocked = []
 limitawal = '999'
-cr = '*Dark dominando*'
+cr = '*sla lek*'
 
 /*********** LOAD FILE ***********/
 const _leveling = JSON.parse(fs.readFileSync('./database/group/leveling.json'))
@@ -300,6 +291,7 @@ async function starts() {
 			const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()
 			const args = body.trim().split(/ +/).slice(1)
 			const isCmd = body.startsWith(prefixbotbot)
+			            const tescuk = ["0@s.whatsapp.net"]
 
 			mess = {
 					wait: 'So um minuto amigo (a)',
@@ -314,8 +306,6 @@ async function starts() {
 				{,
 				only: {
 					group: '[❗] Este comando só pode ser usado em grupos! ❌',
-					premium: '[❗] ESTE PEDIDO É SO PARA *USUÁRIOS PREMIUMS*',
-					mod: '[❗] ESTE PEDIDO É ESPECÍFICO PARA USUARIO MOD DARK BOT*',
 					benned: 'Você para a banda, por favor, contate o proprietário para abrir sua banda',
 					ownerG: '[❗] Proprietário? Este é um recurso especial para o proprietário do bot ❌',
 					ownerB: '[❗] Proprietário? Este é um recurso especial para o proprietário do bot ❌',
@@ -326,11 +316,7 @@ async function starts() {
 			}
 
 			const botNumber = dark.user.jid
-			const ownerNumber = ["5522996215481@s.whatsapp.net"] // replace this with your number
-			const mod = [ownerNumber,"5522996215481@s.whatsapp.net"]//ubah nomor lo
-			const adminbotnumber = ["5522996215481@s.whatsapp.net"]//ubah nomor lo
-			const frendsowner = ["5522996215481@s.whatsapp.net"]//ubah nomor lo
-			const premium = ["5522996215481@s.whatsapp.net","559784130980@s.whatsapp.net","557599941062@s.whatsapp.net","558598669655@s.whatsapp.net","5511949051934@s.whatsapp.net","554792091566@s.whatsapp.net","558699541889@s.whatsapp.net","559294313229@s.whatsapp.net","554298653614@s.whatsapp.net","12267740582@s.whatsapp.net"]
+			const ownerNumber = ["558498198074@s.whatsapp.net"] // replace this with your number
 			const sGroup = from.endsWith('@g.us')
 			const sender = isGroup ? mek.participant : mek.key.remoteJid
 			const groupMetadata = isGroup ? awat dark.groupMetadata(from) : ''
@@ -349,11 +335,7 @@ async function starts() {
 	    	const isAntiRacismo = isGroup ? antiracismo.includes(from) : false
 			const isSimi = isGroup ? samih.includes(from) : false
 			const isOwner = ownerNumber.includes(sender)
-			const isPremium = premium.includes(sender)
-			const ismod = mod.includes(sender)
 			const errorurl2 = 'https://i.ibb.co/dttZM8b/591530180aad.png'
-			const isadminbot = adminbotnumber.includes(sender)
-			const isfrendsowner = frendsowner.includes(sender)
 			const isUrl = (url) => {
 			    return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
 			}
@@ -390,176 +372,102 @@ async function starts() {
         if (messC.includes("preto")){
 		if (!isGroup) return
 		if (!isAntiRacismo) return
-		if (isGroupAdmins) return reply('cara, nao fale essas coisas, é errado, mas vc e admin n irei te banir')
-		dark.updatePresence(from, Presence.composing)
-
-		reply(`tchau racista ${sender.split("@")[0]} voce sera expulso deste grupo em 5 segundos`)
-		setTimeout( () => {
-			dark.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
-		{, 5000)
-		setTimeout( () => {
-			dark.updatePresence(from, Presence.composing)
-			reply("Nesse grupo, não gostamos de racismos, que isso sirva de exemplo 🚶")
-		{, 4000)
-		setTimeout( () => {
-			dark.updatePresence(from, Presence.composing)
-			reply("2 segundos")
-		{, 3000)
-		setTimeout( () => {
-			dark.updatePresence(from, Presence.composing)
-			reply("3 segundos")
-		{, 2000)
-		setTimeout( () => {
-			dark.updatePresence(from, Presence.composing)
-			reply("4 segundos")
-		{, 1000)
-		setTimeout( () => {
-			dark.updatePresence(from, Presence.composing)
-			reply("5 segundo KKKKKKKK tchau otário 😔🤙")
-		{, 0)
-	}
-	
-	        if (messC.includes("seupreto")){
-		if (!isGroup) return
-		if (!isAntiRacismo) return
-		if (isGroupAdmins) return reply('cara, nao fale essas coisas, é errado, mas vc e admin n irei te banir')
-		dark.updatePresence(from, Presence.composing)
-
-		reply(`tchau racista ${sender.split("@")[0]} voce sera expulso deste grupo em 5 segundos`)
-		setTimeout( () => {
-			dark.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
-		{, 5000)
-		setTimeout( () => {
-			dark.updatePresence(from, Presence.composing)
-			reply("1 segundo")
-		{, 4000)
-		setTimeout( () => {
-			drk.updatePresence(from, Presence.composing)
-			reply("2 segundos")
-		{, 3000)
-		setTimeout( () => {
-			dark.updatePresence(from, Presence.composing)
-			reply("3 segundos")
-		{, 2000)
-		setTimeout( () => {
-			dark.updatePresence(from, Presence.composing)
-			reply("4 segundos")
-		{, 1000)
-		setTimeout( () => {
-			dark.updatePresence(from, Presence.composing)
-			reply("5 segundo KKKKKKKK tchau otário 😔🤙")
-		{, 0)
-	}
-	
-	        if (messC.includes("macaco")){
-		if (!isGroup) return
-		if (!isAntiRacismo) return
-		if (isGroupAdmins) return reply('cara, nao fale essas coisas, é errado, mas vc e admin n irei te banir')
-		dark.updatePresence(from, Presence.composing)
-
-		reply(`tchau racista ${sender.split("@")[0]} voce sera expulso deste grupo em 5 segundos`)
-		setTimeout( () => {
-			dark.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
-		{, 5000)
-		setTimeout( () => {
-			dark.updatePresence(from, Presence.composing)
-			reply("1 segundo")
-		{, 4000)
-		setTimeout( () => {
-			dark.updatePresence(from, Presence.composing)
-			reply("2 segundos")
-		{, 3000)
-		setTimeout( () => {
-			dark.updatePresence(from, Presence.composing)
-			reply("3 segundos")
-		{, 2000)
-		setTimeout( () => {
-			dark.updatePresence(from, Presence.composing)
-			reply("4 segundos")
-		{, 1000)
-		setTimeout( () => {
-			dark.updatePresence(from, Presence.composing)
-			reply("5 segundo KKKKKKKK tchau otário 😔🤙")
-		{, 0)
-	}
-	
-	        if (messC.includes("pretoimundo")){
-		if (!isGroup) return
-		if (!isAntiRacismo) return
-		if (isGroupAdmins) return reply('cara, nao fale essas coisas, é errado, mas vc e admin n irei te banir')
-		dark.updatePresence(from, Presence.composing)
-
-		reply(`tchau racista ${sender.split("@")[0]} voce sera expulso deste grupo em 5 segundos`)
-		setTimeout( () => {
-			dark.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
-		{, 5000)
-		setTimeout( () => {
-			dark.updatePresence(from, Presence.composing)
-			reply("1 segundo")
-		{, 4000)
-		setTimeout( () => {
-			dark.updatePresence(from, Presence.composing)
-			reply("2 segundos")
-		{, 3000)
-		setTimeout( () => {
-			dark.updatePresence(from, Presence.composing)
-			reply("3 segundos")
-		{, 2000)
-		setTimout( () => {
-			dark.updatePresence(from, Presence.composing)
-			reply("4 segundos")
-		{, 1000)
-		setTimeout( () => {
-			dark.updatePresence(from, Presence.composing)
-			reply("5 segundo KKKKKKKK tchau otário 😔🤙")
-		{, 0)
-	}
-	
-	        if (messC.includes("pq vc e preto")){
-		if (!isGroup) return
-		if (!isAntiRacismo) return
-		if (isGroupAdmins) return reply('cara, nao fale essas coisas, é errado, mas vc e admin n irei te banir')
-		dark.updatePresence(from, Presence.composing)
-		reply(`tchau racista ${sender.split("@")[0]} voce sera expulso deste grupo em 5 segundos`)
-		setTimeout( () => {
-			dark.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
-		{, 5000)
-		setTimeout( () => {
-			dark.updatePresence(from, Presence.composing)
-			reply("1 segundo")
-		{, 4000)
-		setTimeout( () => {
-			dark.updatePresence(from, Presence.composing)
-			reply("2 segundos")
-		{, 3000)
-		setTimeout( () => {
-			dark.updatePresence(from, Presence.composing)
-			reply("3 segundos")
-		{, 2000)
-		setTimeout( () => {
-			dark.updatePresence(from, Presence.composing)
-			reply("4 segundos")
-		{, 1000)
-		setTimeout( () => {
-			dark.updatePresence(from, Presence.composing)
-			reply("5 segundo KKKKKKKK tchau otário 😔🤙")
-		{, 0)
-	}
-	
-       if (messC.includes("://chat.whatsapp.com/")){
-		if (!isGroup) return
-		if (!isAntiLink) return
-		if (isGroupAdmins) return reply(`*Você é admin, nao irei te banir, fica suave.*`)
+		if (isGroupAdmins) return reply('*Qria tanto banir esse macaco mais ele e adm*')
 		dark.updatePresence(from, Presence.composing)
 		tag Kick = `${sender.split("@")[0]}@s.whatsapp.net`
 		setTimeout( () => {
-		reply('tchau👋')
+		reply()
 		{, 1100)
 		setTimeout( () => {
 		dark.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
 					{, 1000)
 		setTimeout( () => {
-		reply(`link detectado você vai ser expulso`)
+		reply('*banido motivo = mensagens racistas*')
+		{, 0)
+		}
+	
+	        if (messC.includes("seupreto")){
+		if (!isGroup) return
+		if (!isAntiRacismo) return
+		if (isGroupAdmins) return reply('*Qria tanto banir esse macaco mais ele e adm*')
+		dark.updatePresence(from, Presence.composing)
+		tag Kick = `${sender.split("@")[0]}@s.whatsapp.net`
+		setTimeout( () => {
+		reply()
+		{, 1100)
+		setTimeout( () => {
+		dark.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
+					{, 1000)
+		setTimeout( () => {
+		reply('*banido motivo = mensagens racistas*')
+		{, 0)
+		}
+	
+	        if (messC.includes("macaco")){
+		if (!isGroup) return
+		if (!isAntiRacismo) return
+		if (isGroupAdmins) return reply('*Qria tanto banir esse macaco mais ele e adm*')
+		dark.updatePresence(from, Presence.composing)
+		tag Kick = `${sender.split("@")[0]}@s.whatsapp.net`
+		setTimeout( () => {
+		reply()
+		{, 1100)
+		setTimeout( () => {
+		dark.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
+					{, 1000)
+		setTimeout( () => {
+		reply('*banido motivo= mensagens racistas'*')
+		{, 0)
+		}
+	
+	 if (messC.includes("pretoimundo")){
+		if (!isGroup) return
+		if (!isAntiRacismo) return
+		if (isGroupAdmins) return reply('*Qria tanto banir esse macaco mais ele e adm*')
+		dark.updatePresence(from, Presence.composing)
+		tag Kick = `${sender.split("@")[0]}@s.whatsapp.net`
+		setTimeout( () => {
+		reply()
+		{, 1100)
+		setTimeout( () => {
+		dark.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
+					{, 1000)
+		setTimeout( () => {
+		reply('*banido motivo= mensagens racistas*')
+		{, 0)
+		}
+	
+	if (messC.includes("pq vc e preto")){
+		if (!isGroup) return
+		if (!isAntiRacismo) return
+		if (isGroupAdmins) return reply('*Qria tanto banir esse macaco mais ele e adm*')
+		dark.updatePresence(from, Presence.composing)
+		tag Kick = `${sender.split("@")[0]}@s.whatsapp.net`
+		setTimeout( () => {
+		reply()
+		{, 1100)
+		setTimeout( () => {
+		dark.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
+					{, 1000)
+		setTimeout( () => {
+		reply('*banido motivo= mensagens racistas*')
+		{, 0)
+		}
+	
+       if (messC.includes("://chat.whatsapp.com/")){
+		if (!isGroup) return
+		if (!isAntiLink) return
+		if (isGroupAdmins) return reply('*Qria tanto banir esse macaco mais ele e adm*')
+		dark.updatePresence(from, Presence.composing)
+		tag Kick = `${sender.split("@")[0]}@s.whatsapp.net`
+		setTimeout( () => {
+		reply()
+		{, 1100)
+		setTimeout( () => {
+		dark.groupRemove(from, [Kick]).catch((e) => {reply(`*ERROR:* ${e}`)}) 
+					{, 1000)
+		setTimeout( () => {
+		reply('*banido motivo= links*')
 		{, 0)
 		}
 	
@@ -581,89 +489,7 @@ const get = require('got')
     console.log(body[0]['name'])
     dark.sendMess(id,`📌ÚLTIMOS DADOS DO DISTRITO COVID-19 DA INDONÉSIA\n\n*Positif* = ${positif} \n*Sembuh* = ${sembuh} \n*Meninggal* = ${meninggal}\n*Dirawat* = ${dirawat}\n\n*Stay safe dan selalu gunakan masker saat berpergian*`, MessageType.text, { quoted: m } );
 }
-	
-	if (messC.includes("fdp")){
-			dark.updatePresence(from, Presence.composing)
-			reply("teu pai")
-	}
-	
-		if (messC.includes("kkkkkk")){
-			dark.updatePresence(from, Presence.composing)
-			reply("kskskskk")
-	}
-	
-			if (messC.includes("lixo")){
-			dark.updatePresence(from, Presence.composing)
-			reply("por acaso eu sou vc agr?")
-	}
-	
-			if (messC.includes("but")){
-			dark.updatePresence(from, Presence.composing)
-			reply("é bot seu analfabeto")
-	}
-	
-			if (messC.includes("darkbot")){
-			dark.updatePresence(from, Presence.composing)
-			reply("oiii")
-	}
-	
-			if (messC.includes("bem?")){
-			dark.updatePresence(from, Presence.composing)
-			reply("to bem, vlw por perguntar 😏")
-	}
-	
-			if (messC.includes("chato")){
-			dark.updatePresence(from, Presence.composing)
-			reply("nossa 🥺")
-	}
-	
-			if (messC.includes("vadia")){
-			dark.updatePresence(from, Presence.composing)
-			reply("ai mano, vc acha legal usar um argumento machista?")
-	}
-	
-			if (messC.includes("maria")){
-			dark.updatePresence(from, Presence.composing)
-			reply("amo ela")
-	}
-	
-		if (messC.includes("corno")){
-			dark.updatePresence(from, Presence.composing)
-			reply("vsfd seu merda")
-	}
-	
-		if (messC.includes("tmnc")){
-			dark.updatePresence(from, Presence.composing)
-			reply("vai vc, tu ja me disse q é mo bom")
-	}
-	
-		if (messagsC.includes("vsfd")){
-			dark.updatePresence(from, Presence.composing)
-			reply("bora juntos?")
-	}
-	
-		if (messC.includes("cadebot")){
-			dark.updatePresence(from, Presence.composing)
-			reply("olha eu aqui carai")
-	}
-	
-		if (messC.includes("bot")){
-			dark.updatePresence(from, Presence.composing)
-			reply("oi")
-	}
-	
-			if (messC.includes("bah")){
-			dark.updatePresence(from, Presence.composing)
-			axios.get = fs.readFileSync('./assets/fdp.mp3');
-            dark.sendMess(from, axios.get, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-	}
-	
-				if (messC.includes("oii")){
-			dark.updatePresence(from, Presence.composing)
-			axios.get = fs.readFileSync('./assets/ola.mp3');
-            dark.sendMess(from, axios.get, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
-	}
-	
+
 //msc
 	
 					if (messC.includes("hylander")){
@@ -793,11 +619,11 @@ const get = require('got')
 			switch(command) {
 				case 'help':
 				case 'menu':
-					dark.sendMess(from, help(prefixbotbot), text)
+					dark.sendMess(from, help(prefixbotbot), text, tescuk, cr)
 					break
 				case 'help1':
 				case 'menu1':
-					dark.sendMess(from, help1(prefixbotbot), text)
+					dark.sendMess(from, help1(prefixbotbot), text, tescuk, cr)
 					break
 					case 'kiss':
 				    try {    
@@ -896,33 +722,8 @@ const get = require('got')
 					anu = awat fetchJson(`https://api.vhtear.com/harijadian?tgl=${gbl16}&bln=${gbl26}&thn=${gbl36}&apikey={BELI APIKEY BIAR WORK DI 0816546638}`, {method: 'get'})
 					reply(anu.result.hasil)
 					break
-                   case 'modapk':
-                    if (!isPremium) return reply(mess.only.premium)
-                    dark.sendMess(from, modapk(prefixbotbot), text, { quoted: mek })
-                    break
-                   case 'bin':
-                    if (!isPremium) return reply(mess.only.premium)
-                    dark.sendMess(from, gbin(prefixbotbot), text, { quoted: mek })
-                    break
-                   case 'gpessoa':
-                    if (!isPremium) return reply(mess.only.premium)
-                    dark.sendMess(from, gpessoa(prefixbotbot), text, { quoted: mek })
-                    break
                    case 'destrava':
-                    if (!isPremium) return reply(mess.only.premium)
                     dark.sendMess(from, destrava(prefixbotbot), text, { quoted: mek })
-                    break
-                   case 'pack':
-                    if (!isPremium) return reply(mess.only.premium)
-                    dark.sendMess(from, pack(prefixbotbot), text, { quoted: mek })
-                    break
-                   case 'chentai':
-                    if (!isPremium) return reply(mess.only.premium)
-                    dark.sendMess(from, chentai(prefixbotbot), text, { quoted: mek })
-                    break
-                   case 'gcpf':
-                    if (!isPremium) return reply(mess.only.premium)
-                    dark.sendMess(from, gcpf(prefixbotbot), text, { quoted: mek })
                     break
 				case 'ytmp4':
 					if (args.length < 1) return reply('Cadê o url, hum?')
@@ -950,7 +751,6 @@ const get = require('got')
 			dark.sendPtt(from, './lindy/iri.mp3', {quoted: mek, ptt:true})
 			break
 				case 'ytmp3':
-			    	if (!isPremium) return reply(mess.only.premium)
                    reply(mess.wait)
 					if (args.length < 1) return reply('Cadê o url, hum?')
 					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
@@ -1566,10 +1366,6 @@ const get = require('got')
 					buffer = awat getbufferer(anu.result)
 					dark.sendMess(from, buffer, image, {quoted: mek})
 					break
-					case 'vipmenu':
-					if (!isPremium) return reply('Você não é um Membro Premium, entre em contato com o proprietário ou digite *#daftarvip* para comprar acesso Premium!' ,text, { quoted: mek })
-					dark.sendMess(from, vipmenu(prefixbotbot) , text, { quoted: mek })
-					break
 					case 'outros':
 					dark.sendMess(from, outros(prefixbotbot) , text, { quoted: mek })
 					break
@@ -1671,16 +1467,7 @@ const get = require('got')
 					dark.blockUser (`${body.slice(7)}@c.us`, "add")
 					dark.sendMess(from, `perintah Diterima, memblokir ${body.slice(7)}@c.us`, text)
 					break
-				case 'premiumlist':
-					teks = '╭────*「 *PREMIUM USER👑* 」\n'
-					for (let V of premium) {
-						teks += `│+  @${V.split('@')[0]}\n`
-					}
-					teks += `│+ Total : ${premium.length}\n╰──────*「 *DARKBOT* 」*────`
-					dark.sendMess(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": premium}})
-					break
                   case 'qrcode':
-        			if (!isPremium) return reply('Você não é um Membro Premium, entre em contato com o proprietário ou digite *.Daftarvip* para adquirir o acesso Premium!' ,text, { quoted: mek })
 					const tex = encodeURIComponent(body.slice(8))
 					if (!tex) return dark.sendMess(from, 'Digite um texto/url que deseja criar um código qr', text, {quoted: mek})
 					const buffererr = awat getbufferer(`https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${tex}`)
@@ -1788,7 +1575,6 @@ const get = require('got')
 				case 'delete':
 				case 'del':
 				case 'd':  
-					if (!isPremium) return reply('Você não é um Membro Premium, entre em contato com o proprietário ou digite *.Daftarvip* para adquirir o acesso Premium!' ,text, { quoted: mek })
 					if (!isGroup)return reply(mess.only.group)
 					if (!isGroupAdmins)return reply(mess.only.admin)
 					dark.deleteMessage(from, { id: mek.message.extendedTextMessage.contextInfo.stanzaId, remoteJid: from, fromMe: true })
@@ -1845,7 +1631,6 @@ const get = require('got')
 					break
                 case 'tratag':
                      const pesan = body.slice(5)
-                      if (!isPremium) return reply(mess.only.premium)
                       if (pesan.length > 5000) return dark.sendMess(from, 'ate 5k de caracteres', msgType.text, {quoted: mek})
                         tag nomor = mek.participant
                        const teks1 = `*[TRAVA🐊🚩]*\nTRAVADO POR : @${nomor.split("@s.whatsapp.net")[0]}\nMensagem : ${pesan}`
@@ -2256,7 +2041,8 @@ break
 					anu = awat fetchJson(`https://arugaz.herokuapp.com/api/howgay`, {method: 'get'})
 					reply('De acordo com o percentual gay:\n\n'+anu.desc+anu.persen)
 					break
-			  case 'next':               
+			  case 'next':
+               
                 if (isGroup) return  reply( 'NÃO PODE ESTAR EM GRUPO KAK')
                 awat reply('Ache um companheiro >_<')
                 awat reply(`wa.me/${anug}`)
@@ -2300,12 +2086,7 @@ break
                                                 contextInfo: { mentionedJid: [nom] }
                                         }
                                         dark.sendMess(from, tag, text, {quoted: mek})
-                                        break 
-				case 'indo10':
-					if (!isPremium) return reply('Você não é um Membro Premium, entre em contato com o proprietário ou digite *.daftarvip* para comprar acesso Premium!' ,text, { quoted: mek })
-					qute9 = awat getbufferer(`https://i.ibb.co/z6w14Gq/32d64d819e21.png`)
-					dark.sendMess(from, qute9, image, { quoted: mek, caption: 'Aqui está o Bro Baixe o seu próprio link\n\nhttps://www.mediafire.com/file/snwja297dv4zvtl/VID-20210107-WA0036.mp4/file' })
-					break
+                                        break
 case 'iri':
 const irimp3 = fs.readFileSync('./assets/iri.mp3');
 dark.sendMess(from, irimp3, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
@@ -3227,7 +3008,6 @@ break
                       dark.sendMess(from, buffer, image, {quoted: mek})
                       break
 					case 'spamcall':
-          if (!isPremium) return reply(mess.only.premi)
           reply('Espere..')
                                        if (args[0].startsWith('08')) return reply('Use o prefixbotboto número 8/n ex : *8796662*')
                                        if (args[0].startsWith('82255123081')) return reply('Falha ao ligar para o número do bot')
@@ -3504,34 +3284,12 @@ break
 						reply('❌ *ERRO* ❌')
 					}
 					break
-					case 'dado':    
-					if (!isPremium) return reply('Você não é um Membro Premium, entre em contato com o proprietário ou digite *.Daftarvip* para adquirir o acesso Premium!' ,text, { quoted: mek })
+					case 'dado':   
 					
 					kapankah = body.slice(1)
 					const elu =['1','2','3','4','5','6']
 					const ule = elu[Math.floor(Math.random() * elu.length)]
 					dark.sendMess(from, ule, text, { quoted: mek })
-					break
-					case 'addvip':  
-					if (!isOwner) return reply(mess.only.ownerB)
-					if (!isPremium) return reply('Você não é um Membro Premium, entre em contato com o proprietário ou digite * # Daftarvip * para adquirir o acesso Premium!' ,text, { quoted: mek })
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('A marca-alvo que você quer chutar!')
-					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-					if (mentioned.length > 1) {
-						teks = '╭────「 *PREMIUM👑* 」──*\n│+ *Número* : \n│+ *Expirado*: *30 Days*\n│+ *Status*: *ATIVO*\n│ Thx para atualizar para premium🥰\n*╰──────「 *posição* 」────'
-						for (let _ of mentioned) {
-							teks += `@${_.split('@')[0]}\n`
-						}
-						mentions(teks, mentioned, true)
-						dark.sendMess(from, mentioned)
-					} else {
-						mentions(`╭────「 *PREMIUM👑* 」──*\n│+ *Número* : @${mentioned[0].split('@')[0]}\n│+ *Expirado*: *30 Days*\n│+ *Status*: *ATIVO*\n│ Thx para atualizar para premium🥰\n*╰──────「 *posição* 」────`, mentioned, true)
-					dark.sendMess(from, mentioned)
-				    }
-					break
-					case 'daftarvip': 
-					dark.sendMess(from, daftarvip(prefixbotbot) , text, { quoted: mek })
 					break
 					case 'nekopoi':   
 					
@@ -3545,65 +3303,6 @@ break
 					dark.sendMess(from, bufferer, image, {quoted: mek})
                     awat limitAdd(sender)
 					break	
-					case 'cekvip': 
-					if (!isPremium) return reply('Você não é um Membro Premium, entre em contato com o proprietário ou digite *.Daftarvip* para adquirir o acesso Premium!' ,text, { quoted: mek })
-					me = dark.user
-					uptime = process.uptime()
-					dark.sendMess(from,  `*──────────────────*\n*Nome do bot:* DARKBOT\n*─────────────────*\n『 *𝐕𝐈𝐏 𝐔𝐒𝐄𝐑*』\n*──────────────────*\n*•Número:* *${sender.split("@s.whatsapp.net")[0]}*\n*•Status:* *ATIVO*\n*──────────────────*\n*Status Bot:* *${kyun(uptime)}*\n\n*VOCE É UM MEMBRO PREMIUM* 🐊🚩\n*──────────────────*` , text, { quoted: mek, })
-					break
-					case 'dellvip':
-					if (!isOwner) return reply(mess.only.ownerB)
-					if (!isPremium) return reply('Você não é um Membro Premium, entre em contato com o proprietário ou digite * # Daftarvip * para adquirir o acesso Premium!' ,text, { quoted: mek })
-					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag target yang ingin di tendang!')
-					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-					if (mentioned.length > 1) {
-						teks = '╭────「 *PREMIUM👑* 」──*\n│+ *Número* : \n│+ *Status*: *DEATIVO*\n│ Te vejo para o próximo pedido🙂\n*╰──────「 *posição* 」────'
-						for (let _ of mentioned) {
-							teks += `@${_.split('@')[0]}\n`
-						}
-						mentions(teks, mentioned, true)
-						dark.sendMess(from, mentioned)
-					} else {
-						mentions(`╭────「 *PREMIUM👑* 」──*\n│+ *Número* : @${mentioned[0].split('@')[0]}\n│+ *Status*: *DEATIVO*\n│ Te vejo para o próximo pedido🙂\n*╰──────「 *posição* 」────`, mentioned, true)
-					dark.sendMess(from, mentioned)
-				    }
-					break
-					case 'ichiadmin':
-					tod = awat getbufferer(`https://i.ibb.co/XDwBVDJ/1f2652c622fa.jpg`)
-					dark.sendMess(from, tod, image, { quoted: mek, caption: '*╭────*「 *ADMINBOT DARK ✨* 」\n*│+ wa.me/5522996215481*╰──────*「 *DARK* 」*────*\n\n*_SE QUER SER ADMIN DO BOT DARK_*\n*_Tipo /iklan_*' })
-					break
-				case 'iklan':
-					dark.sendMess(from, iklan(prefixbotbot) , text, { quoted: mek })
-					break
-					case 'premiumcek':
-                    if (isBanned) return reply(mess.only.benned)    
-				if (!isUser) return reply(mess.only.userB)
-					sa = awat getbufferer(`https://i.ibb.co/PcQ6tsB/79ac87b9358c.jpg`)
-					dark.sendMess(from, sa, image, { quoted: mek, caption: '*╭────*「 *PREMIUM USER👑* 」\n*│+ wa.me/5522996215481*╰──────*「 * DARK* 」*────*\n\n*_SE QUER SER UM USUÁRIO PREMIUM DO DARK BOT_*\n*_Ketik #daftarvip*' })
-					break
-					case 'cekmod': 
- 
-					if (!isOwner) return reply(mess.only.ownerB)
-                 if (!ismod) return reply('kamu Belum Terdaftar sebagai User Modbot')
-                reply('kamu udah ke daftar sebagai user Modbot')
-                break
-                    case 'modbotlist':
-					teks = 'Esta é a lista de usuários premium :\n'
-					for (let p of mod) {
-						teks += `~> @${p.split('@')[0]}\n`
-					}
-					teks += `Total : ${mod.length}`
-					dark.sendMess(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": mod}})
-					break
-					case 'addpremium': 
-					dark.updatePresence(from, Presence.composing) 
- 
-					if (args.length < 1) return
-					if (!isOwner) return reply(mess.only.ownerB)
-					premium = args[0]
-					reply(`Comando aceito adicionar usuário premium : ${premium}`)
-					break
                  case 'calculadora':
 				     if (args.length < 1) return reply(`[❗] Enviar pedidos *${prefixbotbot}calculadora [ Números ]*\nExemplo : ${prefixbotbot}calculadora 12*12\n*NOTA* :\n- Para multiplicação usando *\n- Para uso adicional +\n- Para redução do uso -\n- Para compartilhar usando /`)
 				    mtk = `${body.slice(12)}`
@@ -3644,11 +3343,6 @@ break
 					memeindodododododododododododododododo = awat kagApi.memeindododododododododododododododododo()
 					bufferer = awat getbufferer(`https://i.pinimg.com/originals/24/5f/91/245f91208f9030724dbc8d1bede2e9ff.gif`)
 					dark.sendMess(from, bufferer, sticker, {quoted: mek, caption: 'slc'})
-					break
-				case 'bot':
-			     	memeindodododododododododododododododo = awat kagApi.memeindododododododododododododododododo()
-					bufferer = awat getbufferer(`https://i.imgur.com/dPUVFF6.png`)
-					dark.sendMess(from, bufferer, image, {quoted: mek, caption: '*_Comandos basicos para bot:_*\n\n*pkg upgrade && pkg update*\n*pkg install git*\n*git clone (link da git)*\n*cd (repositório)*\n*bash install.sh*\n*npm start*\n\n*Dark Domina*'})
 					break
 				case 'belle3':
 					memeindodododododododododododododododo = awat kagApi.memeindododododododododododododododododo()
@@ -3708,11 +3402,6 @@ break
 					bufferer = awat getbufferer(`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtbo5EcVSGj-IvEVznHIgMZ9vjFptZfvprtg&usqp=CAU`)
 					dark.sendMess(from, bufferer, image, {quoted: mek, caption: '️💆'})
 					break
-				case 'canal':
-					memeindodododododododododododododododo = awat kagApi.memeindododododododododododododododododo()
-					bufferer = awat getbufferer(`https://imgur.com/gallery/xuTCBPO`)
-					dark.sendMess(from, bufferer, image, {quoted: mek, caption: '️*canal do dark:*\n\n https://bit.ly/3omUNCg'})
-					break
 				case 'nsfwloli1':
 					memeindodododododododododododododododo = awat kagApi.memeindododododododododododododododododo()
 					bufferer = awat getbufferer(`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJhzKetbU3pzhoZdaIo6qBklCzwvmCCOznbg&usqp=CAU`)
@@ -3758,11 +3447,6 @@ break
 					memeindodododododododododododododododo = awat kagApi.memeindododododododododododododododododo()
 					bufferer = awat getbufferer(`https://imgur.com/${memeindodododododododododododododododo.hash}.jpg`)
 					dark.sendMess(from, bufferer, image, {quoted: mek, caption: '.......'})
-					break
-				case 'dono':
-					memeindodododododododododododododododo = awat kagApi.memeindododododododododododododododododo()
-					bufferer = awat getbufferer(`https://i.imgur.com/AnizaD7.jpg`)
-					dark.sendMess(from, bufferer, image, {quoted: mek, caption: '*CRIADOR:* 𝐷𝐴𝑅𝐾⃖ ☔\n*YOUTUBE:* https://bit.ly/2MD43V2\n*WPP:* wa.me/+5522996215481\n*INSTA:* @th.darkys\n\n\nEspero que tenham gostado do bot 🐊🚩️'})
 					break
 				case 'setprefixbotbot':
 					if (args.length < 1) return
@@ -3904,7 +3588,7 @@ break
 					dark.sendMess(from, teks, text, {detectLinks: false, quoted: mek})
 					break
 				case 'limpar':
-					if (!isOwner) return reply('Quem é Você?, Voce não é meu dono 😂')
+					if (!isOwner) return reply('Quem é Você lek?')
 					anu = awat dark.chats.all()
 					dark.setMaxListeners(25)
 					for (let _ of anu) {
@@ -3913,7 +3597,7 @@ break
 					reply('Excluido todos os chats com sucesso :)')
 					break
 				case 'bc':
-					if (!isOwner) return reply('Quem é Você, você não é meu dono 😂?')
+					if (!isOwner) return reply('Quem é Você lek?')
 					if (args.length < 1) return reply('.......')
 					anu = awat dark.chats.all()
 					if (isMedia && !mek.message.videoMessage || isQuotedbImage) {
